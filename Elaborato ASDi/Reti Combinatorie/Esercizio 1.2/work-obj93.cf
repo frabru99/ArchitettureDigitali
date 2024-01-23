@@ -1,0 +1,17 @@
+v 3
+file . ".\testbench.vhd" "20231004092052.000" "20231004112058.327":
+  entity testbench at 5( 124) + 0 on 50;
+  architecture tb of testbench at 11( 210) + 0 on 51;
+  configuration cfg_tb_sistema at 58( 1581) + 0 on 52;
+file . ".\mux_4_1.vhd" "20230929115858.000" "20231003142353.870":
+  entity mux_4_1 at 3( 4) + 0 on 13;
+  architecture dataflow of mux_4_1 at 21( 295) + 0 on 14;
+file . ".\Demux_1_4.vhd" "20231003123310.000" "20231003143314.205":
+  entity demux_1_4 at 2( 2) + 0 on 36;
+  architecture dataflow of demux_1_4 at 18( 294) + 0 on 37;
+file . ".\mux_16_1.vhd" "20230929121058.000" "20231003142359.876":
+  entity mux_16_1 at 1( 0) + 0 on 15;
+  architecture structural of mux_16_1 at 18( 300) + 0 on 16;
+file . ".\Sistema.vhd" "20231003122902.000" "20231003142906.621":
+  entity sistema at 2( 2) + 0 on 19;
+  architecture structural of sistema at 20( 370) + 0 on 20;

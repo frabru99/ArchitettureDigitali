@@ -25,10 +25,17 @@ architecture oneprocesses of riconoscitoristotsparz is
 
     signal stato_corrente : stati := q0; --signal stato corrente 
 
+    signal m_lock : std_logic :='0'; --variabile per bloccare il selezionatore di riconoscitore di sequenza
+    
+
     
 begin
 
+    
+    
     combinatory: process(clk)
+    
+    
     begin
         if(rising_edge(clk)) then
 
@@ -37,8 +44,12 @@ begin
                 y<='0';
             end if; 
 
+            if(stato_corrente = q0) then
+                m_lock<=m;
+            end if;
 
-            if ( m='1' ) then --sovrapposizione parziale
+
+            if (m_lock='1' ) then --sovrapposizione parziale
                 if ( stato_corrente = q0 AND i ='1') then
                     stato_corrente <= q1;
                     y<='0';
@@ -59,7 +70,7 @@ begin
                     y<='0';
                 end if; 
 
-            else                                             
+            elsif (m_lock='0') then                                              
                     if(stato_corrente = q0 AND i ='1') then
                         stato_corrente <= q2; --corretto
                         y<='0';

@@ -17,7 +17,7 @@ begin
             m => m_tb
         );
 
-    -- Clock process
+    
     process
     begin
         clk_tb <= '0';
@@ -26,7 +26,7 @@ begin
         wait for 5 ns;
     end process;
 
-    -- Stimulus process
+    
     process
     begin
         
@@ -39,14 +39,15 @@ begin
         wait for 10 ns;
         
         i_tb <= '1';
-        wait for 10 ns;
+        wait for 15 ns;
         i_tb <= '0';
-        wait for 10 ns;
+        wait for 15 ns;
         i_tb <= '1';
-
-        reset_tb <= '1';
+        
+        
+        wait for 50 ns;
         m_tb <= '0';    
-        wait for 30 ns;
+        wait for 10 ns;
 
         i_tb <= '1';
         wait for 10 ns;
@@ -55,7 +56,7 @@ begin
         i_tb <= '1';
         
         
-        -- You can continue to provide input sequences for testing
+        
 
         wait for 1000 ns; -- Simulate for a while
         report "Simulation finished" severity note;

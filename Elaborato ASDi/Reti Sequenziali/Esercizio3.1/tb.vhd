@@ -21,9 +21,9 @@ begin
     process
     begin
         clk_tb <= '0';
-        wait for 5 ns;
+        wait for 10 ns;
         clk_tb <= '1';
-        wait for 5 ns;
+        wait for 10 ns;
     end process;
 
     
@@ -39,26 +39,25 @@ begin
         wait for 10 ns;
         
         i_tb <= '1';
-        wait for 15 ns;
+        wait for 20 ns;
         i_tb <= '0';
-        wait for 15 ns;
+        wait for 20 ns;
         i_tb <= '1';
         
+        m_tb <= '0';
+        wait for 75 ns;
         
-        wait for 50 ns;
-        m_tb <= '0';    
-        wait for 10 ns;
-
+        
         i_tb <= '1';
-        wait for 10 ns;
+        wait for 25 ns;
         i_tb <= '0';
-        wait for 10 ns;
+        wait for 20 ns;
         i_tb <= '1';
         
         
         
 
-        wait for 1000 ns; -- Simulate for a while
+        wait; -- Simulate for a while
         report "Simulation finished" severity note;
         wait;
     end process;

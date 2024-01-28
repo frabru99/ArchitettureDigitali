@@ -12,7 +12,7 @@ architecture testbench of tb is
     signal data_in_sig : std_logic_vector(n_bits-1 downto 0);
     signal selection_sig: std_logic_vector(1 downto 0);
     signal clk_sig, reset_sig, external_zero_sig, enable_input_sig, enable_output_sig : std_logic;
-    signal data_out_sig : std_logic_vector(n_bits downto 0);
+    signal data_out_sig : std_logic_vector(n_bits-1 downto 0);
 
     -- Instantiate the shiftregs component
     component shiftregs
@@ -27,13 +27,13 @@ architecture testbench of tb is
             external_zero : in std_logic;
             enable_input : in std_logic;
             enable_output : in std_logic;
-            data_out : out std_logic_vector(n_bits downto 0)
+            data_out : out std_logic_vector(n_bits-1 downto 0)
         );
     end component;
 
 begin
 
-    -- Signals
+   
     
 
     -- Instantiate the shiftregs component
@@ -55,10 +55,12 @@ begin
 
     clk_process :process
     begin
+    while true loop 
         clk_sig <= '0';
         wait for 5 ns;
         clk_sig <= '1';
         wait for 5 ns;
+    end loop;
     end process;
 
     -- Stimulus process

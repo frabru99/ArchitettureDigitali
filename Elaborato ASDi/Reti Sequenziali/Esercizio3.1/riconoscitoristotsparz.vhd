@@ -25,7 +25,7 @@ architecture oneprocesses of riconoscitoristotsparz is
 
     signal stato_corrente : stati := q0; --signal stato corrente 
 
-    signal m_lock : std_logic :='0'; --variabile per bloccare il selezionatore di riconoscitore di sequenza
+    signal m_lock : std_logic; --variabile per bloccare il selezionatore di riconoscitore di sequenza
     
 
     

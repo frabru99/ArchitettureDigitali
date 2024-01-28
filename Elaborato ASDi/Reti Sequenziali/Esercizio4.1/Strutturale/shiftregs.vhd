@@ -18,7 +18,7 @@ entity shiftregs is
         enable_input: in std_logic; --enable per far scorrere l'input nei registri in maniera parallela
         enable_output: in std_logic; --enable per far scorrere l'ouput in maniera parallela 
 
-        data_out : out std_logic_vector(n_bits downto 0) --dati in uscita
+        data_out : out std_logic_vector(n_bits-1 downto 0) --dati in uscita
     );
 end entity shiftregs;
 
@@ -55,7 +55,7 @@ architecture structural of shiftregs is
         a1 : in STD_LOGIC;
         
         s  : in STD_LOGIC;
-        y  : out STD_LOGIC --filo singolo, possiamo anche definire un bus di fili (STD_LOGIC_VECTOR)
+        y  : out STD_LOGIC 
 
         );
     end component;
@@ -86,8 +86,6 @@ begin
         end generate;
     
     
-
-    
     gen2: for i in 0 to n_bits-1 generate 
 
         muxs_2_1: multi port map(
@@ -114,8 +112,6 @@ begin
     y_4_1 => muxToMux(0)
 
     );
-            
-           
 
         
     mux1: mux_4_1 port map(
@@ -130,9 +126,7 @@ begin
     y_4_1 => muxToMux(1)
     
     );
-
-           
-        
+ 
 
     muxn: mux_4_1 port map(
 
@@ -164,7 +158,7 @@ begin
 
 
     --gestione output
-    data_out <= '-' & memOuts(n_bits-1 downto 0) when enable_output = '1' else
+    data_out <= memOuts(n_bits-1 downto 0) when enable_output = '1' else
                 (others => '-') ;
 
 

@@ -27,8 +27,6 @@ architecture oneprocesses of riconoscitoristotsparz is
 
     signal m_lock : std_logic; --variabile per bloccare il selezionatore di riconoscitore di sequenza
     
-
-    
 begin
 
     

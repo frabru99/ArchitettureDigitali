@@ -1,0 +1,55 @@
+$date
+  Wed Oct 04 13:29:19 2023
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$var reg 4 ! controller_mem_sis[0:3] $end
+$var reg 1 " controller_m_sis $end
+$var reg 4 # output_sis[0:3] $end
+$scope module dut $end
+$var reg 4 $ controller_mem_sis[0:3] $end
+$var reg 1 % controller_m_sis $end
+$var reg 4 & output_sis[0:3] $end
+$var reg 8 ' output_mem[0:7] $end
+$scope module rom_1 $end
+$var reg 8 ( output[0:7] $end
+$var reg 4 ) address[0:3] $end
+$upscope $end
+$scope module componentm_1 $end
+$var reg 8 * input_m[0:7] $end
+$var reg 4 + output_m[0:3] $end
+$var reg 1 , selection $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+b0000 !
+0"
+b0000 #
+b0000 $
+0%
+b0000 &
+b00000000 '
+b00000000 (
+b0000 )
+b00000000 *
+b0000 +
+0,
+#10000000
+b1000 !
+1"
+b1000 #
+b1000 $
+1%
+b1000 &
+b00001000 '
+b00001000 (
+b1000 )
+b00001000 *
+b1000 +
+1,
+#20000000

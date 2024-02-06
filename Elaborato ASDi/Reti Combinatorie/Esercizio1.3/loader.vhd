@@ -35,8 +35,5 @@ begin
         end if;
     end process;
 
-
-    
-    
     
 end architecture rtl;

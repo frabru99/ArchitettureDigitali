@@ -4,9 +4,10 @@ use IEEE.numeric_std.all;
 
 
 
-entity fft is
+entity fftPrimo is
     port (
         clk : in std_logic;
+        enableFirst: in std_logic;
         reset : in std_logic; --reset dato esternamente
         set: in std_logic;
         input_loaded: in std_logic;
@@ -14,10 +15,10 @@ entity fft is
         Y : out std_logic
 
     );
-end entity fft;
+end entity fftPrimo;
 
 
-architecture rtl of fft is
+architecture rtl of fftPrimo is
 
     signal T : std_logic :='0';
     
@@ -31,7 +32,7 @@ begin
         
         if (reset='1') then
             T<='0';
-        elsif falling_edge(clk) then
+        elsif falling_edge(enableFirst) then
             if(set='0') then 
                 T<= not T;
               end if;

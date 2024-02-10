@@ -18,7 +18,7 @@ entity SistemaCronometro is
 
         anodes_out: out std_logic_vector(7 downto 0);
         cathodes_out : out std_logic_vector(7 downto 0);
-   
+        fullCount_uscita: out std_logic;
         
         sec_to_Led: out std_logic_vector(5 downto 0);
         
@@ -42,7 +42,8 @@ architecture rtl of SistemaCronometro is
 
         hour: out std_logic_vector(4 downto 0);
         min: out std_logic_vector(5 downto 0);
-        sec: out std_logic_vector(5 downto 0)
+        sec: out std_logic_vector(5 downto 0);
+        fullCount : out std_logic
     );
     end component;
 
@@ -145,7 +146,7 @@ begin
     orario_su_display <= "00000000000" & hourCUDISPLAY & "00" & minCUDISPLAY & "00" & secCUDISPLAY;
     
     sec_to_Led<=secCUDISPLAY;
-    
+
     setLed <= setCUtoCron;
 
     filter: clock_filter port map (
@@ -208,7 +209,9 @@ begin
         
         hour => hourCUDISPLAY,
         min => minCUDISPLAY,
-        sec => secCUDISPLAY
+        sec => secCUDISPLAY,
+
+        fullCount => fullCount_uscita
     );
 
 

@@ -36,11 +36,6 @@ begin
     
     end process;
     
-    --s_source_out <= s_selecter_source_porta_1 when selection = '0';
-    --s_des_out <= s_selecter_des_porta_1 when selection = '0';
-
-    --s_source_out <= s_selecter_source_porta_2 when selection = '1';
-    --s_des_out <= s_selecter_des_porta_2 when selection = '1';
     
     
 end architecture rtl;

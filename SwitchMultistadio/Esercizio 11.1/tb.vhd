@@ -76,22 +76,66 @@ begin
         wait for 20 ns;
         in_sw_porta_2_tb <= "10"; -- Example input for in_sw_porta_2
         wait for 20 ns;
-        adr_sw_source_porta_1_tb <= '1'; -- Example input for adr_sw_source_porta_1
+        adr_sw_source_porta_1_tb <= '0'; -- Example input for adr_sw_source_porta_1
         wait for 20 ns;
         adr_sw_des_porta_1_tb <= '0'; -- Example input for adr_sw_des_porta_1
         wait for 20 ns;
-        adr_sw_source_porta_2_tb <= '0'; -- Example input for adr_sw_source_porta_2
+        adr_sw_source_porta_2_tb <= '1'; -- Example input for adr_sw_source_porta_2
+        wait for 20 ns;
+        adr_sw_des_porta_2_tb <= '1'; -- Example input for adr_sw_des_porta_2
+        wait for 20 ns;
+        warning_sw_2_tb <= '1'; -- Example input for warning_sw_2, maggiore priorità
+        warning_sw_1_tb <= '1'; -- Example input for warning_sw_1
+        
+        wait for 100 ns;
+        
+        warning_sw_2_tb <= '0'; -- Example input for warning_sw_2, maggiore priorità
+        warning_sw_1_tb <= '0'; -- Example input for warning_sw_1
+        
+
+        wait for 100 ns;
+        
+        in_sw_porta_1_tb <= "01"; -- Example input for in_sw_porta_1
+        wait for 20 ns;
+        in_sw_porta_2_tb <= "10"; -- Example input for in_sw_porta_2
+        wait for 20 ns;
+        adr_sw_source_porta_1_tb <= '0'; -- Example input for adr_sw_source_porta_1
+        wait for 20 ns;
+        adr_sw_des_porta_1_tb <= '0'; -- Example input for adr_sw_des_porta_1
+        wait for 20 ns;
+        adr_sw_source_porta_2_tb <= '1'; -- Example input for adr_sw_source_porta_2
+        wait for 20 ns;
+        adr_sw_des_porta_2_tb <= '1'; -- Example input for adr_sw_des_porta_2
+        wait for 20 ns;
+        warning_sw_2_tb <= '0'; -- Example input for warning_sw_1
+        wait for 20 ns;
+        warning_sw_1_tb <= '1'; -- Example input for warning_sw_2
+        
+         wait for 100 ns;
+        
+        warning_sw_2_tb <= '0'; -- Example input for warning_sw_2, maggiore priorità
+        warning_sw_1_tb <= '0'; -- Example input for warning_sw_1
+        
+        
+        wait for 100 ns;
+        in_sw_porta_1_tb <= "01"; -- Example input for in_sw_porta_1
+        wait for 20 ns;
+        in_sw_porta_2_tb <= "10"; -- Example input for in_sw_porta_2
+        wait for 20 ns;
+        adr_sw_source_porta_1_tb <= '0'; -- Example input for adr_sw_source_porta_1
+        wait for 20 ns;
+        adr_sw_des_porta_1_tb <= '0'; -- Example input for adr_sw_des_porta_1
+        wait for 20 ns;
+        adr_sw_source_porta_2_tb <= '1'; -- Example input for adr_sw_source_porta_2
         wait for 20 ns;
         adr_sw_des_porta_2_tb <= '1'; -- Example input for adr_sw_des_porta_2
         wait for 20 ns;
         warning_sw_2_tb <= '1'; -- Example input for warning_sw_1
         wait for 20 ns;
-        warning_sw_1_tb <= '1'; -- Example input for warning_sw_2
+        warning_sw_1_tb <= '0'; -- Example input for warning_sw_2                
+                  
         
         
-
-        -- Insert more stimuli or use loops for repetitive tests
-
         wait;
     end process stimulus;
 

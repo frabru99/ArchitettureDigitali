@@ -51,6 +51,83 @@ architecture behavioural of mrob_tb is
 		 res<='1';
 		 wait for 20 ns;
 		 res<='0';
+		 
+
+		 
+		  -- -------------------------------------   operazione numero 1:
+		 -- 15*3=45 (002D)
+		 inputx<="00001111";  
+		 inputy<="00000011";  
+		 	 
+		 -- start deve essere visto da clk_div: poich? sar? generato dal button debouncer si aggiunger? anche il clk_div
+		 -- al button debouncer e il segnale di start deve durare quanto il periodo del clk rallentato
+		 wait for 40 ns;
+		 start<='1';
+		 wait for 20 ns;
+		 start<='0';
+		 -- aspetto fine operazione, ci vogliono circa 500ns
+		 wait for 700ns;
+		 
+		 res<='1';
+		 wait for 20 ns;
+		 res<='0';
+		 wait for 20 ns;
+		 
+		 -- -------------------------------------------operazione numero 2:
+		 -- -5*3=-15 (FFF1)		 
+		 inputy<="11111011";  -- -5
+		 inputx<="00000011";  -- +3
+		 
+		 wait for 40 ns;
+		 -- start
+		 start<='1';
+		 wait for 20 ns;
+		 start<='0';
+		 -- aspetto fine operazione
+		 wait for 700 ns;
+		 
+		 
+		 res<='1';
+		 wait for 20 ns;
+		 res<='0';
+		 wait for 20 ns;
+		 
+		 -- -------------------------------------------operazione numero 3:
+		 -- -3*3=-9 (FFF7)
+		 inputx<="11111101"; -- -3
+		 inputy<="00000011"; -- +3
+		
+		 wait for 40 ns;
+		 -- start
+		 start<='1';
+		 wait for 20 ns;
+		 start<='0';
+		 -- aspetto fine operazione
+		 wait for 700 ns;
+		 
+		 
+		 res<='1';
+		 wait for 20 ns;
+		 res<='0';
+		 wait for 20 ns;
+		 
+		 -- ------------------------------------------operazione numero 4:
+		 -- -3*-5=15 (00FF)
+		 inputx<="11111101"; 
+		 inputy<="11111011";
+		
+		 wait for 40 ns;
+		 -- start
+		 start<='1';
+		 wait for 20 ns;
+		 start<='0';
+		 wait for 700 ns;
+		 
+		 
+		 res<='1';
+		 wait for 20 ns;
+		 res<='0';
+		 wait for 20 ns;
 		
 		
 		 -- ------------------------------------------operazione numero 5:
